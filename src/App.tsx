@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars, no-unreachable */
 import "./App.css"
-import { Home, Contact, Admin, Login } from "views"
+import { Home, Contact, Admin, Login, Tareas } from "views"
 
 const routes = {
     home: <Home />,
@@ -25,7 +25,7 @@ function App() {
     // if (currentRoute === "contact") return <Contact />
     // if (currentRoute === "admin") return <Admin />
     // if (currentRoute === "login") return <Login />
-    currentRoute = "login"
+    currentRoute = "tareas"
     const mostrar = true
     return (
         <>
@@ -35,6 +35,7 @@ function App() {
                     {currentRoute === "contact" && <Contact />}
                     {currentRoute === "admin" && <Admin />}
                     {currentRoute === "login" && <Login />}
+                    {currentRoute === "tareas" && <Tareas />}
                     {/* {currentRoute === "home"
                 ? "Hola mundo desde home"
                 : "No estoy en la home"} */}
