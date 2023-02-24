@@ -5,6 +5,7 @@ import Contact from "views/Contact"
 import Users from "views/Users"
 import App from "App"
 import UserDetails from "views/UserDetails"
+import RMApi from "views/RMApi"
 
 const estaLogueado = () => Math.random() > 0.5
 // proteger Ruta
@@ -22,6 +23,10 @@ const routes: RouteObject[] = [
             {
                 path: "",
                 element: <Home />,
+            },
+            {
+                path: "rmApi",
+                element: <RMApi />,
             },
             {
                 path: "contact",

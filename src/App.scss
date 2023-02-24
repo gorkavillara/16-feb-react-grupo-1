@@ -69,3 +69,16 @@ div.footer {
   background-color: rgb(210, 210, 210);
   padding: 1rem 0.25rem;
 }
+
+div.card {
+  margin: 1rem;
+  padding: 1rem;
+  border: solid 1px rgba(210, 210, 210, 0.5);
+  border-radius: 0.25rem;
+  box-shadow: 0 0 1rem rgba(210, 210, 210, 0.3);
+  display: flex;
+  gap: 1rem;
+  .details {
+    flex-grow: 1;
+  }
+}

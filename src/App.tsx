@@ -25,17 +25,10 @@ function App() {
                     <NavLink to="/contact">Contact</NavLink>
                 </li>
                 <li>
-                    <a href="#" onClick={goToUsers}>
-                        Clic Users
-                    </a>
+                    <NavLink to="/rmApi">Rick and Morty</NavLink>
                 </li>
             </nav>
             <Outlet />
-            <div className="footer">
-                <button onClick={() => setLoggedIn((prev) => !prev)}>
-                    {loggedIn ? "Log out" : "Log in"}
-                </button>
-            </div>
         </>
     )
 }
