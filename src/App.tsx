@@ -1,15 +1,21 @@
 /* eslint-disable @typescript-eslint/no-unused-vars, no-unreachable, jsx-a11y/anchor-is-valid */
-import { useState } from "react"
-import Contador from "views/Contador"
+import Home from "views/Home"
 
 import "./App.scss"
+import SettingsView from "views/SettingsView"
+import AppContextProvider from "contexts/AppContextProvider"
+import ContadorContextProvider from "contexts/ContadorContextProvider"
+import Contador from "views/Contador"
 
 function App() {
-    const [miEstado, setMiEstado] = useState("hola mundo")
     return (
-        <>
-            <Contador />
-        </>
+        <AppContextProvider>
+            <Home />
+            <SettingsView />
+            <ContadorContextProvider>
+                <Contador />
+            </ContadorContextProvider>
+        </AppContextProvider>
     )
 }
 

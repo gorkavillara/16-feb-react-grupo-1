@@ -1,13 +1,21 @@
-import Hijo from 'components/Hijo'
-import React from 'react'
+import { AppContext } from "contexts/AppContextProvider"
+import React, { useContext } from "react"
 
-const Home = ({ miEstado }: any) => {
-  return (
-    <div>
-      <h1>Home</h1>
-      <Hijo miEstado={miEstado} />
-    </div>
-  )
+const Home = () => {
+    const { settings, activeUser } = useContext(AppContext)
+    console.log({ settings, activeUser })
+    return (
+        <div className={`home ${settings?.darkMode ? "dark" : ""}`}>
+            <nav className="navbar">
+                <li>Home</li>
+                <li>Users</li>
+                <li>Login</li>
+            </nav>
+            <main>
+                <h1>Hola mundo desde la home</h1>
+            </main>
+        </div>
+    )
 }
 
 export default Home

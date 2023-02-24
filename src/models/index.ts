@@ -1,23 +1,33 @@
-export interface IFormData {
-    nombre: string
-    apellido: string
-    ciudad: string
-    edad: number
-    isDeveloper: boolean
+import React, { Dispatch, SetStateAction } from "react"
+
+export enum actions { increment = "increment", decrement = "decrement", reset = "reset" }
+
+export interface User {
+    username: string
+    role: string
 }
 
-export type FormDataValidation<T> = {
-    [Property in keyof T]?: string
+export interface Settings {
+    darkMode: boolean
 }
 
-export interface RMCharacter {
-    id: number
-    name: string
-    status: string
-    species: string
-    type: string
-    gender: string
-    image: string
-    created: Date
-    url: string
+export interface Context {
+    settings: Settings
+    activeUser: User | null
+    setSettings: Dispatch<SetStateAction<Settings>>
+    toggleDarkMode: () => void
+}
+
+export interface ContadorContextInterface {
+    valor: number
+    dispatchContador: React.Dispatch<any>
+    incrementaContador: any
+}
+
+export type OptionalContext<T> = {
+    [Prop in keyof T]?: T[Prop]
+}
+
+export interface ContadorInterface {
+    valor: number
 }
