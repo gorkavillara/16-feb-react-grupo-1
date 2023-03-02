@@ -6,6 +6,7 @@ const Home = () => {
     console.log({ settings, activeUser })
     return (
         <div className={`home ${settings?.darkMode ? "dark" : ""}`}>
+        {/* <div> */}
             <nav className="navbar">
                 <li>Home</li>
                 <li>Users</li>
