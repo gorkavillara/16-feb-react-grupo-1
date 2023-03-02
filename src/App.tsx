@@ -1,12 +1,22 @@
+import { useState, lazy, Suspense } from "react"
+// import Contador from "views/Contador"
+// import Lista from "views/Lista"
+
+const Contador = lazy(() => import("views/Contador"))
+const Lista = lazy(() => import("views/Lista"))
+
 /* eslint-disable @typescript-eslint/no-unused-vars, no-unreachable, jsx-a11y/anchor-is-valid */
-import "bootstrap/dist/css/bootstrap.css"
-import Bootstrap from "views/Bootstrap"
 function App() {
+    const [route, setRoute] = useState("lista")
+    const cambia = () => {
+        setRoute("contador")
+    }
     return (
-        <>
-            <h1>App</h1>
-            <Bootstrap />
-        </>
+        <Suspense fallback={<div>Cargando...</div>}>
+            {route === "contador" && <Contador />}
+            {route === "lista" && <Lista />}
+            <button onClick={cambia}>Cambia</button>
+        </Suspense>
     )
 }
 
