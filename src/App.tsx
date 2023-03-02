@@ -11,11 +11,17 @@ function App() {
     const cambia = () => {
         setRoute("contador")
     }
+
+    const entorno = process.env.NODE_ENV
     return (
         <Suspense fallback={<div>Cargando...</div>}>
+            <div>
+                <h1>{process.env.REACT_APP_NAME}</h1>
+            </div>
             {route === "contador" && <Contador />}
             {route === "lista" && <Lista />}
             <button onClick={cambia}>Cambia</button>
+            <div>Entorno: {entorno}</div>
         </Suspense>
     )
 }
