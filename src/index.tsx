@@ -11,4 +11,4 @@ root.render(
     <App />
 )
 
-reportWebVitals((data) => console.log(data))
+// reportWebVitals((data) => console.log(data))
