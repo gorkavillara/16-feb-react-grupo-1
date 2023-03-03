@@ -1,3 +1,4 @@
+import Sidebar from 'components/Sidebar';
 import React from 'react';
 import { Outlet } from "react-router-dom"
 import styles from './App.module.scss';
@@ -5,11 +6,10 @@ import styles from './App.module.scss';
 function App() {
   return (
     <div className={styles.App}>
-      <div className={styles.sidebar}></div>
-      <main>
-        Welcome
+      <Sidebar />
+      <div className={styles.main}>
         <Outlet />
-      </main>
+      </div>
     </div>
   );
 }

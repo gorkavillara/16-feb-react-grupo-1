@@ -6,11 +6,9 @@
   gap: 0;
   padding: 2rem;
   box-sizing: border-box;
-  .sidebar {
-    height: 100%;
-    width: 5rem;
-    background-color: #6E6AF7;
-    border-radius: 1rem;
-    box-shadow: 0 0 1rem #9895f5ed;
-  }
+}
+
+.main {
+  padding: 0.5rem;
+  box-sizing: border-box;
 }
